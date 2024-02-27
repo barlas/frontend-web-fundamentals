@@ -65,16 +65,6 @@
     * Developers can automatically generate API endpoints as a part of the server-side component of their SvelteKit application. This minimizes the need to manually set up the middleware or the server code that would traditionally be used to process such data calls.
     * Consistent navigation experience. With SvelteKit, you can use hybrid rendering to combine server-side rendered pages with a client-side router. This makes the navigation experience similar to a typical single-page app (SPA) that doesn’t require full page reloads.
     * Developer-friendly tooling. SvelteKit uses Vite for a modern scaffolding and development experience.
-  * SvelteKit vs Next.js
-    * Underlying Library/Framework: SvelteKit uses Svelte, while Next.js is based on React.
-    * Rendering Techniques: SvelteKit compiles away the framework code for a smaller bundle size, whereas Next.js leverages React's virtual DOM.
-    * Developer Experience: SvelteKit is often praised for its simplicity and ease of learning, while Next.js is known for its extensive feature set and flexibility.
-    * Ecosystem: Next.js benefits from the larger React ecosystem, offering a vast range of libraries and tools. SvelteKit's ecosystem is growing but is smaller in comparison.
-  * SvelteKit
-    * Technology: SvelteKit is built on top of Svelte, a component framework that compiles components to highly efficient imperative code that directly manipulates the DOM. This approach differs fundamentally from traditional virtual DOM-based frameworks, potentially leading to faster initial load times and smoother runtime performance.
-    * Developer Experience: SvelteKit offers a simpler and more intuitive syntax compared to many other frameworks, making it easier for beginners to pick up while still being powerful enough for advanced users. The learning curve is generally considered lower.
-    * Performance: Due to Svelte's compile-time optimizations, applications built with SvelteKit can be very lightweight and fast, with minimal runtime overhead.
-    * Use Cases: Ideal for applications where performance and load times are critical. It's also great for developers looking for a more straightforward and less boilerplate-heavy development experience.
   * Next.js
     * Technology: Next.js is built on React, utilizing the virtual DOM for updates and rendering. It provides features like server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR), making it highly versatile for building a wide range of applications.
     * Developer Experience: Offers a robust set of features out of the box, including file-based routing, API routes, and automatic code splitting, which can enhance productivity but may also introduce a steeper learning curve for newcomers.
@@ -83,11 +73,12 @@
   * Next.js
     * Routing
     * SSG, CSR, SSR
-  * Svelte Compiler and AST
-    * Svelte is a compiler that converts Svelte components (written in a mix of HTML, CSS, and JavaScript) into highly efficient imperative code that updates the DOM when the state of the application changes. The Svelte compiler uses an AST to understand the structure of a Svelte component.
-    * Parsing: The Svelte compiler parses the source code of a component into an AST, which represents the component's structure in a hierarchical, tree-like form. This includes HTML structure, script tags, style tags, and template logic.
-    * Transformation: The AST allows the Svelte compiler to perform optimizations and transformations on the source code. It can statically analyze the code, identify reactive statements, and optimize bindings and event listeners.
-    * Code Generation: Finally, based on the transformed AST, the Svelte compiler generates optimized JavaScript code. This code is what gets executed in the browser, creating a fast and efficient web application.
+  * SvelteKit vs Next.js
+    * Underlying Library/Framework: SvelteKit uses Svelte, while Next.js is based on React.
+    * Rendering Techniques: SvelteKit compiles away the framework code for a smaller bundle size, whereas Next.js leverages React's virtual DOM.
+    * Developer Experience: SvelteKit is often praised for its simplicity and ease of learning, while Next.js is known for its extensive feature set and flexibility.
+    * Ecosystem: Next.js benefits from the larger React ecosystem, offering a vast range of libraries and tools. SvelteKit's ecosystem is growing but is smaller in comparison.
+  * Svelte
     ```
     <script>
       let count = 0;
@@ -138,6 +129,11 @@
       * Mounting: Both components have a mount function that attaches their content to the DOM. For the child, it's creating and appending a paragraph element.
       * Updating: The update method in ChildComponent takes new props and updates its DOM elements if necessary. This mimics Svelte's reactivity system, where changes in props trigger updates.
       * Destruction: Both components include a destroy method for cleanup, removing event listeners, or detaching from the DOM.
+    * Svelte Compiler and AST
+      * Svelte is a compiler that converts Svelte components (written in a mix of HTML, CSS, and JavaScript) into highly efficient imperative code that updates the DOM when the state of the application changes. The Svelte compiler uses an AST to understand the structure of a Svelte component.
+      * Parsing: The Svelte compiler parses the source code of a component into an AST, which represents the component's structure in a hierarchical, tree-like form. This includes HTML structure, script tags, style tags, and template logic.
+      * Transformation: The AST allows the Svelte compiler to perform optimizations and transformations on the source code. It can statically analyze the code, identify reactive statements, and optimize bindings and event listeners.
+      * Code Generation: Finally, based on the transformed AST, the Svelte compiler generates optimized JavaScript code. This code is what gets executed in the browser, creating a fast and efficient web application.
   * React vs Svelte
     * Performance and Efficiency
       * React: Utilizes a virtual DOM to optimize rendering by diffing against the previous state, which can improve performance for dynamic, high-traffic applications. However, this layer of abstraction may introduce overhead in terms of both performance and bundle size, which could be significant for an in-car system that demands high efficiency and responsiveness.
