@@ -185,7 +185,7 @@
   * React.js
     * Controlled / Uncontrolled
     * Denounce Input Fields
-    Higher-Order Components (HOCs)
+    * Higher-Order Components (HOCs)
       * HOCs are a pattern in React for reusing component logic. An HOC is a function that takes a component and returns a new component with additional props or functionality. Here's an example to illustrate how an HOC can be used to add additional functionality — for instance, to add user authentication logic to a component:
       * Step 1: Define the Higher-Order Component
       ```
