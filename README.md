@@ -75,7 +75,7 @@
         * [Redux vs Context API](#redux-vs-context-api)
         * [Controlled Components](#controlled-components)
       - [Uncontrolled Components](#uncontrolled-components)
-      -[Denounce Input Fields](#denounce-input-fields)
+      - [Denounce Input Fields](#denounce-input-fields)
       - [JavaScript](#javascript)
         * [Ternary Operator ? :](#ternary-operator----)
         * [Spread Operator …](#spread-operator--)
