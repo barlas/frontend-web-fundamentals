@@ -36,46 +36,46 @@ Works in conjunction with useRef and React.forwardRef to customize the instance 
 React’s Suspense component, in combination with React.lazy for code splitting, represents a significant advancement in improving user experience by lazily loading components and displaying fallback content (like a loading indicator) while waiting for the component to load. An explanation of this feature would add value, especially for handling code splitting and reducing the initial load time of applications.
 
 #### Transition Features
-* Concurrent Rendering: These transition features are part of React's concurrent mode, which allows React to interrupt a rendering work-in-progress to handle more urgent tasks. This mode enables smoother UI transitions and improved responsiveness.
-* Priority-based Rendering: React can prioritize certain updates over others, ensuring that high-priority updates (like animations or user inputs) are not blocked by lower-priority updates (like data fetching or heavy computations).
-* Interruptible Rendering: The ability to start rendering changes and interrupt them if a more urgent update comes along. This helps in optimizing the rendering pipeline, ensuring that React can work on high-priority tasks first while postponing others.
+* **Concurrent Rendering:** These transition features are part of React's concurrent mode, which allows React to interrupt a rendering work-in-progress to handle more urgent tasks. This mode enables smoother UI transitions and improved responsiveness.
+* **Priority-based Rendering:** React can prioritize certain updates over others, ensuring that high-priority updates (like animations or user inputs) are not blocked by lower-priority updates (like data fetching or heavy computations).
+* **Interruptible Rendering:** The ability to start rendering changes and interrupt them if a more urgent update comes along. This helps in optimizing the rendering pipeline, ensuring that React can work on high-priority tasks first while postponing others.
 
 #### useTransition
-Handling Transitions: The useTransition hook allows you to mark updates inside your component as transitions. This hook returns a tuple: the first value is a boolean indicating whether we’re waiting for the transition to finish, and the second is a function that you can use to trigger the transition. This enables your app to keep responding to user inputs while rendering the new changes in the background, improving the perceived performance of your app.
+**Handling Transitions:** The useTransition hook allows you to mark updates inside your component as transitions. This hook returns a tuple: the first value is a boolean indicating whether we’re waiting for the transition to finish, and the second is a function that you can use to trigger the transition. This enables your app to keep responding to user inputs while rendering the new changes in the background, improving the perceived performance of your app.
 
 #### startTransition
-Triggering Transitions Imperatively: In scenarios where you want to trigger a transition without the useTransition hook, React 18 introduces the startTransition API. It allows you to mark updates as non-urgent without the hook's tuple return. This API helps in scenarios where the transition needs to be triggered programmatically or outside the typical render flow.
+**Triggering Transitions Imperatively:** In scenarios where you want to trigger a transition without the useTransition hook, React 18 introduces the startTransition API. It allows you to mark updates as non-urgent without the hook's tuple return. This API helps in scenarios where the transition needs to be triggered programmatically or outside the typical render flow.
 
 ## State Management
-Local & Global State: React allows for state management at the component level (local state) or across the entire application (global state). While the Context API is suitable for simpler or medium-scale applications, libraries like Redux or MobX offer more robust solutions for large-scale applications with complex state interactions, providing tools for predictable state transitions, debugging, and middleware integration.
+**Local & Global State:** React allows for state management at the component level (local state) or across the entire application (global state). While the Context API is suitable for simpler or medium-scale applications, libraries like Redux or MobX offer more robust solutions for large-scale applications with complex state interactions, providing tools for predictable state transitions, debugging, and middleware integration.
 
 ### useState vs useReducer
-State Management Choices: The useState hook is ideal for simple state management scenarios, while useReducer is better suited for more complex state logic, offering a more structured environment similar to Redux but encapsulated within a React hook for managing local component state.
+**State Management Choices:** The useState hook is ideal for simple state management scenarios, while useReducer is better suited for more complex state logic, offering a more structured environment similar to Redux but encapsulated within a React hook for managing local component state.
 
 ### Redux vs Context API
-Choosing the Right Tool: Redux provides a powerful global state management solution with extensive middleware support and dev tools, ideal for complex applications. In contrast, the Context API is a simpler and more direct way to share state across components, suitable for lighter applications or for complementing Redux in specific scenarios.
+**Choosing the Right Tool:** Redux provides a powerful global state management solution with extensive middleware support and dev tools, ideal for complex applications. In contrast, the Context API is a simpler and more direct way to share state across components, suitable for lighter applications or for complementing Redux in specific scenarios.
 
 ### useOptimistic Hook
-Optimistic UI Updates: This conceptual hook is designed to manage optimistic updates, providing immediate feedback in the UI before the actual operation completes, thus enhancing the perceived responsiveness of applications.
+**Optimistic UI Updates:** This conceptual hook is designed to manage optimistic updates, providing immediate feedback in the UI before the actual operation completes, thus enhancing the perceived responsiveness of applications.
 
 ### Controlled vs Uncontrolled Components
-Form Handling in React: Controlled components let React manage the form data, providing a single source of truth and enabling features like conditional rendering based on form state. Uncontrolled components, on the other hand, delegate the form state to the DOM, making them easier to integrate with non-React code and simplifying the component's logic.
+**Form Handling in React:** Controlled components let React manage the form data, providing a single source of truth and enabling features like conditional rendering based on form state. Uncontrolled components, on the other hand, delegate the form state to the DOM, making them easier to integrate with non-React code and simplifying the component's logic.
 
 ### Debouncing Input Fields
-Optimizing Input Interactions: Debouncing is a technique to limit the rate of execution of a function, particularly useful in input fields to prevent high-frequency state updates, thereby optimizing performance and reducing the number of re-renders, especially useful in scenarios like real-time search or validation as the user types.
+**Optimizing Input Interactions:** Debouncing is a technique to limit the rate of execution of a function, particularly useful in input fields to prevent high-frequency state updates, thereby optimizing performance and reducing the number of re-renders, especially useful in scenarios like real-time search or validation as the user types.
 
 ## Performance Optimization
-Reducing Re-renders & Virtual DOM: Effective performance optimization in React involves minimizing unnecessary re-renders and efficiently updating the DOM. Techniques like memoization, using React.memo, PureComponent, and implementing shouldComponentUpdate can prevent redundant rendering. Understanding the virtual DOM and ensuring immutable state management are crucial for predictable UI updates and optimal rendering performance.
+**Reducing Re-renders & Virtual DOM:** Effective performance optimization in React involves minimizing unnecessary re-renders and efficiently updating the DOM. Techniques like memoization, using React.memo, PureComponent, and implementing shouldComponentUpdate can prevent redundant rendering. Understanding the virtual DOM and ensuring immutable state management are crucial for predictable UI updates and optimal rendering performance.
 
 ## Type Checking and TypeScript
-Enhancing Code Robustness: PropTypes in React allows for runtime type checking, helping developers catch bugs by validating props passed to components. TypeScript integration in React takes it a step further by providing static type checking, defining interfaces for props and state, and utilizing advanced types for more precise code, resulting in improved maintainability and developer experience.
+**Enhancing Code Robustness:** PropTypes in React allows for runtime type checking, helping developers catch bugs by validating props passed to components. TypeScript integration in React takes it a step further by providing static type checking, defining interfaces for props and state, and utilizing advanced types for more precise code, resulting in improved maintainability and developer experience.
 
 ## Security in React
-Mitigating XSS Risks: Ensuring security in React applications involves protecting against cross-site scripting (XSS) attacks by sanitizing user input, validating external inputs, and adhering to best practices such as not using dangerouslySetInnerHTML without precaution. React's built-in escaping helps prevent XSS by securely rendering user-supplied content.
+**Mitigating XSS Risks:** Ensuring security in React applications involves protecting against cross-site scripting (XSS) attacks by sanitizing user input, validating external inputs, and adhering to best practices such as not using dangerouslySetInnerHTML without precaution. React's built-in escaping helps prevent XSS by securely rendering user-supplied content.
 
 ## Testing and Debugging
-Tools & Strategies: Testing frameworks like Jest, combined with the React Testing Library, support a robust testing environment for unit and integration tests. React Developer Tools is an essential browser extension for debugging, providing insights into the component tree, props, state, and hooks, facilitating a better development and debugging workflow.
+**Tools & Strategies:** Testing frameworks like Jest, combined with the React Testing Library, support a robust testing environment for unit and integration tests. React Developer Tools is an essential browser extension for debugging, providing insights into the component tree, props, state, and hooks, facilitating a better development and debugging workflow.
 
 ## Next.js/SSR
-Server-Side Rendering (SSR): SSR with frameworks like Next.js enhances SEO and improves the initial loading time by rendering React components on the server and sending the HTML to the client. It's particularly beneficial for content-rich applications where search engine visibility and fast content delivery are crucial.
+**Server-Side Rendering (SSR):** SSR with frameworks like Next.js enhances SEO and improves the initial loading time by rendering React components on the server and sending the HTML to the client. It's particularly beneficial for content-rich applications where search engine visibility and fast content delivery are crucial.
 
