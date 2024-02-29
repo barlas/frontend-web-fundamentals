@@ -2,6 +2,34 @@
 # React.js Comprehensive Guide
 This guide provides a detailed overview of key concepts, patterns, and techniques in React.js, serving as a handy reference for developers.
 
+## Table of contents
+- [React.js Comprehensive Guide](#reactjs-comprehensive-guide)
+  * [React Component Lifecycle](#react-component-lifecycle)
+    + [Reconciliation Algorithm](#reconciliation-algorithm)
+    + [React Compiler](#react-compiler)
+  * [Hooks and Functional Components](#hooks-and-functional-components)
+    + [Higher-Order Components (HOCs)](#higher-order-components--hocs-)
+    + [useLayoutEffect](#uselayouteffect)
+    + [useRef](#useref)
+    + [React.ForwardRef](#reactforwardref)
+    + [useImperativeHandle](#useimperativehandle)
+    + [React Fiber](#react-fiber)
+      - [Suspense and Lazy Loading](#suspense-and-lazy-loading)
+      - [Transition Features](#transition-features)
+      - [useTransition](#usetransition)
+      - [startTransition](#starttransition)
+  * [State Management](#state-management)
+    + [useState vs useReducer](#usestate-vs-usereducer)
+    + [Redux vs Context API](#redux-vs-context-api)
+    + [useOptimistic Hook](#useoptimistic-hook)
+    + [Controlled vs Uncontrolled Components](#controlled-vs-uncontrolled-components)
+    + [Debouncing Input Fields](#debouncing-input-fields)
+  * [Performance Optimization](#performance-optimization)
+  * [Type Checking and TypeScript](#type-checking-and-typescript)
+  * [Security in React](#security-in-react)
+  * [Testing and Debugging](#testing-and-debugging)
+  * [Next.js/SSR](#nextjs-ssr)
+
 ## React Component Lifecycle
 **Phases & Methods:** React components go through a lifecycle that includes **mounting (initialization)**, **updating (re-rendering upon data changes)**, and **unmounting (cleanup)**. Lifecycle methods like constructor(), render(), and componentDidMount() allow developers to hook into these phases for managing state, side effects, and more. React 16.3 introduced new lifecycle methods such as getDerivedStateFromProps for state synchronization and getSnapshotBeforeUpdate for capturing DOM information before changes.
 
