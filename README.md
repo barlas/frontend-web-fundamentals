@@ -164,10 +164,10 @@ Automatic API endpoints.
 * Developer-friendly tooling. SvelteKit uses Vite for a modern scaffolding and development experience.
 
 #### Next.js
-Technology: Next.js is built on React, utilizing the virtual DOM for updates and rendering. It provides features like server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR), making it highly versatile for building a wide range of applications.
-Developer Experience: Offers a robust set of features out of the box, including file-based routing, API routes, and automatic code splitting, which can enhance productivity but may also introduce a steeper learning curve for newcomers.
-Performance: Next.js applications can be optimized for performance, especially with SSR and SSG, enabling fast page loads and interactive experiences. However, the runtime performance might be slightly heavier compared to SvelteKit due to the virtual DOM.
-Use Cases: Suited for large-scale applications that require dynamic content rendering, extensive SEO optimization, and the robust ecosystem of React. It's also beneficial for projects that need to leverage a vast number of existing React libraries and components.
+* **Technology:** Next.js is built on React, utilizing the virtual DOM for updates and rendering. It provides features like server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR), making it highly versatile for building a wide range of applications.
+* **Developer Experience:** Offers a robust set of features out of the box, including file-based routing, API routes, and automatic code splitting, which can enhance productivity but may also introduce a steeper learning curve for newcomers.
+* **Performance:** Next.js applications can be optimized for performance, especially with SSR and SSG, enabling fast page loads and interactive experiences. However, the runtime performance might be slightly heavier compared to SvelteKit due to the virtual DOM.
+* **Use Cases:** Suited for large-scale applications that require dynamic content rendering, extensive SEO optimization, and the robust ecosystem of React. It's also beneficial for projects that need to leverage a vast number of existing React libraries and components.
 
 #### SvelteKit vs Next.js
 Underlying Library/Framework: SvelteKit uses Svelte, while Next.js is based on React.
