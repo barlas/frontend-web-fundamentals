@@ -76,7 +76,7 @@
         * [Redux vs Context API](#redux-vs-context-api)
         * [Controlled Components](#controlled-components)
       - [Uncontrolled Components](#uncontrolled-components)
-        * [Denounce Input Fields](#denounce-input-fields)
+      -[Denounce Input Fields](#denounce-input-fields)
       - [JavaScript](#javascript)
         * [Ternary Operator ? :](#ternary-operator----)
         * [Spread Operator …](#spread-operator--)
@@ -430,7 +430,7 @@ An uncontrolled component works more like traditional HTML form elements. The fo
 * Refs for Access: You typically use refs to access the DOM elements directly and retrieve their values when needed, rather than storing their values in state.
 * Less Boilerplate: There’s less React code involved in managing the state and changes of form elements, which can simplify your component code for certain forms.
 
-##### Denounce Input Fields
+#### Denounce Input Fields
 The concept of "denouncing" input fields might be a misunderstanding or typo, often confused with "debouncing." Debouncing is a technique used to limit the rate at which a function is executed. In the context of input fields, debouncing is valuable because it ensures that state updates (or other expensive operations) don't fire on every keystroke, but rather after a certain amount of inactivity or delay. This can be particularly useful in a controlled component where you might want to validate user input or run an autocomplete functionality based on user input but want to minimize the number of invocations for performance reasons.
 
 
