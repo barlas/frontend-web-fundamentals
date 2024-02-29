@@ -4,9 +4,11 @@ This guide provides a detailed overview of key concepts, patterns, and technique
 
 ## Table of contents
 - [React.js Comprehensive Guide](#reactjs-comprehensive-guide)
+  * [Table of contents](#table-of-contents)
   * [React Component Lifecycle](#react-component-lifecycle)
     + [Reconciliation Algorithm](#reconciliation-algorithm)
     + [React Compiler](#react-compiler)
+      - [useOptimistic Hook](#useoptimistic-hook)
   * [Hooks and Functional Components](#hooks-and-functional-components)
     + [Higher-Order Components (HOCs)](#higher-order-components--hocs-)
     + [useLayoutEffect](#uselayouteffect)
@@ -21,7 +23,6 @@ This guide provides a detailed overview of key concepts, patterns, and technique
   * [State Management](#state-management)
     + [useState vs useReducer](#usestate-vs-usereducer)
     + [Redux vs Context API](#redux-vs-context-api)
-    + [useOptimistic Hook](#useoptimistic-hook)
     + [Controlled vs Uncontrolled Components](#controlled-vs-uncontrolled-components)
     + [Debouncing Input Fields](#debouncing-input-fields)
   * [Performance Optimization](#performance-optimization)
@@ -38,6 +39,9 @@ This guide provides a detailed overview of key concepts, patterns, and technique
 
 ### React Compiler
 **Future Directions:** The evolving React compiler aims to improve performance by adopting compile-time optimizations, potentially reducing the runtime work needed and aligning with approaches seen in frameworks like Svelte, where the bulk of the work is shifted to compile time.
+
+#### useOptimistic Hook
+**Optimistic UI Updates:** This conceptual hook is designed to manage optimistic updates, providing immediate feedback in the UI before the actual operation completes, thus enhancing the perceived responsiveness of applications.
 
 ## Hooks and Functional Components
 **Simplicity & Performance:** Hooks provide a powerful way to use state and other React features in functional components, which are often easier to read and test. The useEffect hook is used for handling side effects, while useLayoutEffect is suitable for synchronous DOM mutations. Custom hooks enable the reuse of stateful logic across multiple components, promoting cleaner and more modular code.
@@ -82,9 +86,6 @@ React’s Suspense component, in combination with React.lazy for code splitting,
 
 ### Redux vs Context API
 **Choosing the Right Tool:** Redux provides a powerful global state management solution with extensive middleware support and dev tools, ideal for complex applications. In contrast, the Context API is a simpler and more direct way to share state across components, suitable for lighter applications or for complementing Redux in specific scenarios.
-
-### useOptimistic Hook
-**Optimistic UI Updates:** This conceptual hook is designed to manage optimistic updates, providing immediate feedback in the UI before the actual operation completes, thus enhancing the perceived responsiveness of applications.
 
 ### Controlled vs Uncontrolled Components
 **Form Handling in React:** Controlled components let React manage the form data, providing a single source of truth and enabling features like conditional rendering based on form state. Uncontrolled components, on the other hand, delegate the form state to the DOM, making them easier to integrate with non-React code and simplifying the component's logic.
