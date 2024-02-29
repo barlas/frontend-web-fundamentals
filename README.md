@@ -107,24 +107,24 @@ In JavaScript, you often encounter tasks like calculating Fibonacci numbers, fin
 #### Memoization (Top Down, Recursive)
  Memoization is a common technique used in dynamic programming to store the results of expensive function calls and return the cached result when the same inputs occur again. In JavaScript, this is typically implemented using objects (for unordered key-value pairs) or arrays (for ordered lists of values) as caches.
 ```
-* function fib(n, memo = {}) {
-* * if (n in memo) return memo[n];
-* * if (n <= 2) return 1;
-* * memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
-* * return memo[n];
-* }
+function fib(n, memo = {}) {
+ if (n in memo) return memo[n];
+ if (n <= 2) return 1;
+ memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+ return memo[n];
+}
 ```
 
 #### Tabulation (Bottom Up, Iterative)
 Another dynamic programming technique is tabulation, where you solve problems by filling up a table (usually an array) from the bottom up. This method iterates through the table in a non-recursive manner, which can be more space-efficient and faster for some problems due to reduced call stack usage.
 ```
 function fibTabulation(n) {
-* * if (n <= 2) return 1;
-* * let fibNumbers = [0, 1, 1];
-* * for (let i = 3; i <= n; i++) {
-* * * * fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2];
-* * }
-* * return fibNumbers[n];
+ if (n <= 2) return 1;
+ let fibNumbers = [0, 1, 1];
+ for (let i = 3; i <= n; i++) {
+   fibNumbers[i] = fibNumbers[i - 1] + fibNumbers[i - 2];
+ }
+ return fibNumbers[n];
 }
 ```
 
