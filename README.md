@@ -9,7 +9,7 @@
     + [Dynamic Programming](#dynamic-programming)
       - [Identifying Overlapping Subproblems:](#identifying-overlapping-subproblems-)
       - [Memoization (Top Down, Recursive)](#memoization--top-down--recursive-)
-        * [Tabulation (Bottom Up, Iterative)](#tabulation--bottom-up--iterative-)
+      - [Tabulation (Bottom Up, Iterative)](#tabulation--bottom-up--iterative-)
     + [Computer Systems](#computer-systems)
     + [Common Software Concepts](#common-software-concepts)
       - [Transpilers](#transpilers)
@@ -115,7 +115,7 @@ In JavaScript, you often encounter tasks like calculating Fibonacci numbers, fin
 * }
 ```
 
-##### Tabulation (Bottom Up, Iterative)
+#### Tabulation (Bottom Up, Iterative)
 Another dynamic programming technique is tabulation, where you solve problems by filling up a table (usually an array) from the bottom up. This method iterates through the table in a non-recursive manner, which can be more space-efficient and faster for some problems due to reduced call stack usage.
 ```
 function fibTabulation(n) {
