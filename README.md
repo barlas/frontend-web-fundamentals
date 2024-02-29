@@ -2,7 +2,6 @@
 
 ## Table of contents
 - [The Web Development Primer](#the-web-development-primer)
-  * [Table of contents](#table-of-contents)
   * [Computer Science](#computer-science)
     + [Data Structures](#data-structures)
     + [Algorithms](#algorithms)

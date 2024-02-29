@@ -4,7 +4,6 @@ This guide provides a detailed overview of key concepts, patterns, and technique
 
 ## Table of contents
 - [React.js Comprehensive Guide](#reactjs-comprehensive-guide)
-  * [Table of contents](#table-of-contents)
   * [React Component Lifecycle](#react-component-lifecycle)
     + [Reconciliation Algorithm](#reconciliation-algorithm)
     + [React Compiler](#react-compiler)
