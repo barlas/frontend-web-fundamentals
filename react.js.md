@@ -3,23 +3,21 @@
 This guide provides a detailed overview of key concepts, patterns, and techniques in React.js, serving as a handy reference for developers.
 
 ## React Component Lifecycle
-Phases & Methods: React components go through a lifecycle that includes mounting (initialization), updating (re-rendering upon data changes), and unmounting (cleanup). Lifecycle methods like constructor(), render(), and componentDidMount() allow developers to hook into these phases for managing state, side effects, and more. React 16.3 introduced new lifecycle methods such as getDerivedStateFromProps for state synchronization and getSnapshotBeforeUpdate for capturing DOM information before changes.
+**Phases & Methods:** React components go through a lifecycle that includes **mounting (initialization)**, **updating (re-rendering upon data changes)**, and **unmounting (cleanup)**. Lifecycle methods like constructor(), render(), and componentDidMount() allow developers to hook into these phases for managing state, side effects, and more. React 16.3 introduced new lifecycle methods such as getDerivedStateFromProps for state synchronization and getSnapshotBeforeUpdate for capturing DOM information before changes.
 
 ### Reconciliation Algorithm
-Reconciliation & React Fiber: The reconciliation algorithm is what allows React to efficiently update the DOM by comparing virtual DOM trees. React Fiber is an advanced reconciliation engine that enables incremental rendering, prioritizing updates, and pausing or aborting rendering as needed to optimize performance and responsiveness in complex applications.
-
-Efficient UI Updates: The reconciliation algorithm underpins React's ability to efficiently update the UI, employing a diffing strategy that minimizes DOM manipulations. By comparing previous and current virtual DOMs, React determines the most efficient updates to apply, ensuring high-performance rendering even in complex applications.
+**Reconciliation aka Diffing Algorithm & React Fiber (v16):** The reconciliation algorithm is what allows React to efficiently update the DOM by comparing virtual DOM trees. React Fiber is an advanced reconciliation engine that enables incremental rendering, prioritizing updates, and pausing or aborting rendering as needed to optimize performance and responsiveness in complex applications.
 
 ### React Compiler
-Future Directions: The evolving React compiler aims to improve performance by adopting compile-time optimizations, potentially reducing the runtime work needed and aligning with approaches seen in frameworks like Svelte, where the bulk of the work is shifted to compile time.
+**Future Directions:** The evolving React compiler aims to improve performance by adopting compile-time optimizations, potentially reducing the runtime work needed and aligning with approaches seen in frameworks like Svelte, where the bulk of the work is shifted to compile time.
 
 ## Hooks and Functional Components
-Simplicity & Performance: Hooks provide a powerful way to use state and other React features in functional components, which are often easier to read and test. The useEffect hook is used for handling side effects, while useLayoutEffect is suitable for synchronous DOM mutations. Custom hooks enable the reuse of stateful logic across multiple components, promoting cleaner and more modular code.
+**Simplicity & Performance:** Hooks provide a powerful way to use state and other React features in functional components, which are often easier to read and test. The useEffect hook is used for handling side effects, while useLayoutEffect is suitable for synchronous DOM mutations. Custom hooks enable the reuse of stateful logic across multiple components, promoting cleaner and more modular code.
 
 ### Higher-Order Components (HOCs)
-HOCs, Render Props, & More: High-Order Components (HOCs) and render props are advanced React patterns for reusing component logic and sharing stateful logic between components. Error boundaries provide a way to gracefully handle JavaScript errors in the component tree. React Fragments and portals offer solutions for DOM tree structure management and rendering child components into different DOM subtrees.
+**HOCs, Render Props, & More:** High-Order Components (HOCs) and render props are advanced React patterns for reusing component logic and sharing stateful logic between components. Error boundaries provide a way to gracefully handle JavaScript errors in the component tree. React Fragments and portals offer solutions for DOM tree structure management and rendering child components into different DOM subtrees.
 
-Component Enhancement: HOCs are functions that take a component and return a new component with extended functionalities. They are used to abstract shared logic and enhance components, for example, with additional data fetching logic or context-related functionalities.
+**Component Enhancement:** HOCs are functions that take a component and return a new component with extended functionalities. They are used to abstract shared logic and enhance components, for example, with additional data fetching logic or context-related functionalities.
 
 ### useLayoutEffect
 Synchronous DOM mutations: It works identically to useEffect, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Avoid its use unless necessary, as it can lead to performance issues.
