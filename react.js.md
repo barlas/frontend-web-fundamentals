@@ -155,6 +155,19 @@ React’s Suspense component, in combination with React.lazy for code splitting,
 #### startTransition
 **Triggering Transitions Imperatively:** In scenarios where you want to trigger a transition without the useTransition hook, React 18 introduces the startTransition API. It allows you to mark updates as non-urgent without the hook's tuple return. This API helps in scenarios where the transition needs to be triggered programmatically or outside the typical render flow.
 
+```
+  const [query, setQuery] = useState('');
+  const [list, setList] = useState(['apple', 'orange', 'banana', 'pear', 'grape']);
+  const [isPending, startTransition] = useTransition();
+
+  const updateQuery = (value) => {
+    setQuery(value);
+    startTransition(() => {
+      setList(currentList => currentList.filter(item => item.includes(value)));
+    });
+  };
+```
+
 ## State Management
 **Local & Global State:** React allows for state management at the component level (local state) or across the entire application (global state). While the Context API is suitable for simpler or medium-scale applications, libraries like Redux or MobX offer more robust solutions for large-scale applications with complex state interactions, providing tools for predictable state transitions, debugging, and middleware integration.
 
