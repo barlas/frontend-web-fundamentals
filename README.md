@@ -391,11 +391,11 @@ export default AuthenticatedDashboard;
 Summary:
 * useState is best for simple states and straightforward updates.
 * * useReducer shines in more complex scenarios where state logic benefits from being organized in a reducer function for clarity, maintainability, and predictability.
-Use useState when:
+##### Use useState when:
 * State is simple and independent: Ideal for simple pieces of state that don't depend on each other. For example, toggling a boolean flag, setting a string or a number.
 * Updates are straightforward: When state updates are simple and can be done with a single call to setState without needing previous state or complex logic.
 * Low complexity: For managing a single or a few unrelated pieces of state within a component.
-Use useReducer when:
+##### Use useReducer when:
 * Complex state logic: When you have complex state logic that involves multiple sub-values or when managing tightly coupled states where one state update might depend on another.
 * State transitions are complex: For scenarios where the next state depends intricately on the previous one, making it beneficial to centralize state transition logic in one place.
 * Related state actions: When dealing with multiple actions that affect the state in various ways, encapsulating these actions in a reducer function makes the component's state management more predictable and maintainable.
@@ -405,13 +405,13 @@ Use useReducer when:
 Summary
 * Use Redux when dealing with complex state interactions, requiring middleware for side effects, needing robust debugging tools, or managing large-scale applications.
 * Use the Context API for simpler global state management, to avoid prop drilling, and when working within smaller applications or alongside hooks for cleaner code.
-When to Use Redux
+##### When to Use Redux
 * Complex State Logic: Redux is well-suited for managing complex state logic that involves multiple reducers, or when the state is heavily interdependent and needs to be accessed by many components at different nesting levels.
 * Global State: For applications with a global state that needs to be shared across many components, Redux provides a centralized store that makes it easier to manage and debug state changes.
 * Middleware and Side Effects: Redux's ecosystem includes powerful middleware, like Redux Thunk and Redux Saga, which are great for handling side effects such as asynchronous API calls.
 * DevTools and Debugging: Redux comes with excellent dev tools for time-travel debugging, state inspection, and action replay, which can be invaluable for complex applications.
 * Large-Scale Applications: For large-scale applications with complex data flows and many user interactions, Redux's predictability and structured state management can be very beneficial.
-When to Use the Context API
+##### When to Use the Context API
 * Simple Global State: For applications with a relatively simple global state that a few components need to access or modify, the Context API is a simpler and more straightforward choice.
 * Avoid Prop Drilling: When you have deeply nested components and you want to avoid passing props through multiple levels of components, Context provides a way to share values directly with the components that need them.
 * Use with Hooks: The Context API is often used in conjunction with the useContext hook to make it easier to access context values in functional components.
