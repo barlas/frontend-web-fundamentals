@@ -275,6 +275,28 @@ export default Counter;
 
 ### Controlled vs Uncontrolled Components
 **Form Handling in React:** Controlled components let React manage the form data, providing a single source of truth and enabling features like conditional rendering based on form state. Uncontrolled components, on the other hand, delegate the form state to the DOM, making them easier to integrate with non-React code and simplifying the component's logic.
+**Why Uncontrolled approach? Simplicity and Familiarity:** They resemble traditional HTML form inputs where the form data is handled by the DOM itself. This can be simpler to implement, as you don't need to write an event handler for every way your data can change and pass the state through a React component.
+```
+function UncontrolledForm() {
+  const inputRef = useRef(null); // Ref to access the input DOM element
+
+  const handleSubmit = (event) => {
+    alert('A name was submitted: ' + inputRef.current.value);
+    event.preventDefault(); // Prevent default form submission
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" ref={inputRef} /> {/* No state controlling the value */}
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  );
+}
+
+```
 
 ### Debouncing Input Fields
 **Optimizing Input Interactions:** Debouncing is a technique to limit the rate of execution of a function, particularly useful in input fields to prevent high-frequency state updates, thereby optimizing performance and reducing the number of re-renders, especially useful in scenarios like real-time search or validation as the user types.
