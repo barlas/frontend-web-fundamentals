@@ -50,15 +50,93 @@ This guide provides a detailed overview of key concepts, patterns, and technique
 
 ### useLayoutEffect
 **Synchronous DOM mutations:** It works identically to useEffect, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Avoid its use unless necessary, as it can lead to performance issues.
+```
+function MeasureExample() {
+  const [width, setWidth] = useState(0);
+  const ref = useRef(null);
+
+  useLayoutEffect(() => {
+    setWidth(ref.current.offsetWidth);
+  }, []); // Empty dependency array means this runs once on mount
+
+  return (
+    <div>
+      <div ref={ref} style={{ width: '50%', padding: 20, background: 'lightgrey' }}>
+        Resize the window to see changes in my width!
+      </div>
+      <p>The above div is {width}px wide.</p>
+    </div>
+  );
+}
+```
 
 ### useRef
 **Accessing DOM Elements:** The useRef hook can be used to access DOM elements directly. It returns a mutable ref object whose .current property is initialized to the passed argument. It’s handy for keeping a mutable object around which doesn’t cause re-renders when updated. Keeping a reference to an input element for managing focus, reading values directly for uncontrolled components, or storing the previous state/value.
+```
+function App() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    // Focus the input element on component mount
+    inputRef.current.focus();
+  }, []);
+
+  return <input ref={inputRef} type="text" />;
+}
+```
 
 ### React.ForwardRef
 A React API that allows you to forward refs from a parent component to a child component. This is especially useful in higher-order components or component libraries when the ref needs to be attached directly to a nested child. It wraps a component, allowing it to receive a ref that it can then attach to a specific child component or DOM element. It’s invaluable for reusable component libraries and managing focus, selection, or animations.
+```
+// Child component that receives a ref from its parent
+const FancyButton = React.forwardRef((props, ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+));
+
+// Parent component that renders the FancyButton and attaches a ref to it
+function App() {
+  const buttonRef = React.useRef(null);
+
+  React.useEffect(() => {
+    console.log(buttonRef.current); // Outputs the DOM node corresponding to the button element
+  }, []);
+
+  return (
+    <FancyButton ref={buttonRef}>Click me!</FancyButton>
+  );
+}
+```
 
 ### useImperativeHandle
 Works in conjunction with useRef and React.forwardRef to customize the instance value exposed to parent components when they use a ref to access the child component. It allows a child component to expose a specific API to anything holding its ref. For instance, you might want to expose a focus method without exposing the DOM node itself.
+```
+const FancyInput = forwardRef((props, ref) => {
+  const inputRef = useRef();
+
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    }
+  }));
+
+  return <input ref={inputRef} {...props} />;
+});
+
+function ParentComponent() {
+  const fancyInputRef = useRef();
+
+  return (
+    <div>
+      <FancyInput ref={fancyInputRef} />
+      <button onClick={() => fancyInputRef.current.focus()}>
+        Focus the input
+      </button>
+    </div>
+  );
+}
+```
 
 ### React Fiber
 **Advanced Rendering:** React Fiber represents a significant overhaul of React's core algorithm, introducing capabilities like incremental rendering—splitting rendering work into chunks and spreading it over multiple frames—and prioritizing updates to enhance the application's responsiveness and user experience.
