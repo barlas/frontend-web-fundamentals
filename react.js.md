@@ -173,9 +173,105 @@ React’s Suspense component, in combination with React.lazy for code splitting,
 
 ### useState vs useReducer
 **State Management Choices:** The useState hook is ideal for simple state management scenarios, while useReducer is better suited for more complex state logic, offering a more structured environment similar to Redux but encapsulated within a React hook for managing local component state.
+```
+const initialState = { count: 0 };
+// Reducer function that determines how the state should change based on the action
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    ...
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+```
 
 ### Redux vs Context API
 **Choosing the Right Tool:** Redux provides a powerful global state management solution with extensive middleware support and dev tools, ideal for complex applications. In contrast, the Context API is a simpler and more direct way to share state across components, suitable for lighter applications or for complementing Redux in specific scenarios.
+```
+import React, { useState, createContext, useContext } from 'react';
+
+// Create a Context for the theme
+const ThemeContext = createContext();
+
+// A component that provides the theme context to its children
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState('light');
+
+  function toggleTheme() {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  }
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+// A component that consumes the theme context to use the theme value
+function ThemedButton() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  return (
+    <button onClick={toggleTheme} style={{ background: theme === 'light' ? '#fff' : '#333', color: theme === 'light' ? '#333' : '#fff' }}>
+      Toggle Theme
+    </button>
+  );
+}
+
+// App component that renders the ThemedButton within the ThemeProvider
+function App() {
+  return (
+    <ThemeProvider>
+      <ThemedButton />
+    </ThemeProvider>
+  );
+}
+
+export default App;
+
+
+// Redux actions
+const increment = () => ({ type: 'INCREMENT' });
+const decrement = () => ({ type: 'DECREMENT' });
+
+// Redux reducer
+const counterReducer = (state = { count: 0 }, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+// Redux store
+import { createStore } from 'redux';
+const store = createStore(counterReducer);
+
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+function Counter() {
+  const count = useSelector((state) => state.count); // Accessing state
+  const dispatch = useDispatch(); // Dispatching actions
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
 
 ### Controlled vs Uncontrolled Components
 **Form Handling in React:** Controlled components let React manage the form data, providing a single source of truth and enabling features like conditional rendering based on form state. Uncontrolled components, on the other hand, delegate the form state to the DOM, making them easier to integrate with non-React code and simplifying the component's logic.
