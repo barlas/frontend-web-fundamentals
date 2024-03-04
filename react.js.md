@@ -36,17 +36,6 @@ This guide provides a detailed overview of key concepts, patterns, and technique
 ### Reconciliation Algorithm
 **Reconciliation aka Diffing Algorithm & React Fiber (v16):** The reconciliation algorithm is what allows React to efficiently update the DOM by comparing virtual DOM trees. React Fiber is an advanced reconciliation engine that enables incremental rendering, prioritizing updates, and pausing or aborting rendering as needed to optimize performance and responsiveness in complex applications.
 
-### React Fiber
-**Advanced Rendering:** React Fiber represents a significant overhaul of React's core algorithm, introducing capabilities like incremental rendering—splitting rendering work into chunks and spreading it over multiple frames—and prioritizing updates to enhance the application's responsiveness and user experience.
-
-#### Suspense and Lazy Loading
-React’s Suspense component, in combination with React.lazy for code splitting, represents a significant advancement in improving user experience by lazily loading components and displaying fallback content (like a loading indicator) while waiting for the component to load. An explanation of this feature would add value, especially for handling code splitting and reducing the initial load time of applications.
-
-#### Transition Features
-* **Concurrent Rendering:** These transition features are part of React's concurrent mode, which allows React to interrupt a rendering work-in-progress to handle more urgent tasks. This mode enables smoother UI transitions and improved responsiveness.
-* **Priority-based Rendering:** React can prioritize certain updates over others, ensuring that high-priority updates (like animations or user inputs) are not blocked by lower-priority updates (like data fetching or heavy computations).
-* **Interruptible Rendering:** The ability to start rendering changes and interrupt them if a more urgent update comes along. This helps in optimizing the rendering pipeline, ensuring that React can work on high-priority tasks first while postponing others.
-
 ### React Compiler
 **Future Directions:** The evolving React compiler aims to improve performance by adopting compile-time optimizations, potentially reducing the runtime work needed and aligning with approaches seen in frameworks like Svelte, where the bulk of the work is shifted to compile time.
 
@@ -70,6 +59,17 @@ A React API that allows you to forward refs from a parent component to a child c
 
 ### useImperativeHandle
 Works in conjunction with useRef and React.forwardRef to customize the instance value exposed to parent components when they use a ref to access the child component. It allows a child component to expose a specific API to anything holding its ref. For instance, you might want to expose a focus method without exposing the DOM node itself.
+
+### React Fiber
+**Advanced Rendering:** React Fiber represents a significant overhaul of React's core algorithm, introducing capabilities like incremental rendering—splitting rendering work into chunks and spreading it over multiple frames—and prioritizing updates to enhance the application's responsiveness and user experience.
+
+#### Suspense and Lazy Loading
+React’s Suspense component, in combination with React.lazy for code splitting, represents a significant advancement in improving user experience by lazily loading components and displaying fallback content (like a loading indicator) while waiting for the component to load. An explanation of this feature would add value, especially for handling code splitting and reducing the initial load time of applications.
+
+#### Transition Features
+* **Concurrent Rendering:** These transition features are part of React's concurrent mode, which allows React to interrupt a rendering work-in-progress to handle more urgent tasks. This mode enables smoother UI transitions and improved responsiveness.
+* **Priority-based Rendering:** React can prioritize certain updates over others, ensuring that high-priority updates (like animations or user inputs) are not blocked by lower-priority updates (like data fetching or heavy computations).
+* **Interruptible Rendering:** The ability to start rendering changes and interrupt them if a more urgent update comes along. This helps in optimizing the rendering pipeline, ensuring that React can work on high-priority tasks first while postponing others.
 
 #### useTransition
 **Handling Transitions:** The useTransition hook allows you to mark updates inside your component as transitions. This hook returns a tuple: the first value is a boolean indicating whether we’re waiting for the transition to finish, and the second is a function that you can use to trigger the transition. This enables your app to keep responding to user inputs while rendering the new changes in the background, improving the perceived performance of your app.
