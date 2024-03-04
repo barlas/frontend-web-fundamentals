@@ -42,7 +42,7 @@ This guide provides a detailed overview of key concepts, patterns, and technique
   * [React Fiber](#react-fiber-1)
   * [SvelteKit](#sveltekit)
   * [Next.js](#nextjs)
-    + [SvelteKit vs Next.js](#sveltekit-vs-nextjs)
+  * [SvelteKit vs Next.js](#sveltekit-vs-nextjs)
   * [Svelte](#svelte)
     + [Component Compilation](#component-compilation)
     + [Optimization Across Components](#optimization-across-components)
@@ -58,10 +58,10 @@ This guide provides a detailed overview of key concepts, patterns, and technique
     + [Svelte Memory Implications](#svelte-memory-implications)
     + [React Memory Implications](#react-memory-implications)
   * [React and Svelte Reactivity Models](#react-and-svelte-reactivity-models)
-    + [Compile-time vs Run-time Reactivity](#compile-time-vs-run-time-reactivity)
-      - [Comparative Analysis](#comparative-analysis)
-      - [Compile-time Reactivity](#compile-time-reactivity)
-      - [Run-time Reactivity](#run-time-reactivity)
+  * [Compile-time vs Run-time Reactivity](#compile-time-vs-run-time-reactivity)
+    + [Comparative Analysis](#comparative-analysis)
+    + [Compile-time Reactivity](#compile-time-reactivity)
+    + [Run-time Reactivity](#run-time-reactivity)
 
 ## React Component Lifecycle
 **Phases & Methods:** React components go through a lifecycle that includes **mounting (initialization)**, **updating (re-rendering upon data changes)**, and **unmounting (cleanup)**. Lifecycle methods like constructor(), render(), and componentDidMount() allow developers to hook into these phases for managing state, side effects, and more.
@@ -437,7 +437,7 @@ Automatic API endpoints.
 * **Performance:** Next.js applications can be optimized for performance, especially with SSR and SSG, enabling fast page loads and interactive experiences. However, the runtime performance might be slightly heavier compared to SvelteKit due to the virtual DOM.
 * **Use Cases:** Suited for large-scale applications that require dynamic content rendering, extensive SEO optimization, and the robust ecosystem of React. It's also beneficial for projects that need to leverage a vast number of existing React libraries and components.
 
-### SvelteKit vs Next.js
+## SvelteKit vs Next.js
 Underlying Library/Framework: SvelteKit uses Svelte, while Next.js is based on React.
 Rendering Techniques: SvelteKit compiles away the framework code for a smaller bundle size, whereas Next.js leverages React's virtual DOM.
 Developer Experience: SvelteKit is often praised for its simplicity and ease of learning, while Next.js is known for its extensive feature set and flexibility.
@@ -534,13 +534,13 @@ Garbage Collection: The process of re-rendering and diffing can lead to more fre
 ## React and Svelte Reactivity Models
 In summary, Svelte's compile-time reactivity model provides optimization and performance benefits through smaller bundle sizes and direct DOM updates, making it well-suited for applications where performance is critical. React, with its virtual DOM and runtime reactivity model, offers a flexible and powerful way to build complex applications, with optimizations like concurrent mode aimed at improving performance in scenarios with intensive and complex UI updates.
 
-### Compile-time vs Run-time Reactivity
-#### Comparative Analysis
+## Compile-time vs Run-time Reactivity
+### Comparative Analysis
 Performance: Compile-time reactivity can offer superior performance for certain types of applications, particularly those requiring frequent, granular updates to the UI. Run-time reactivity, with its virtual DOM, can be more efficient for applications with complex UIs where optimizing the number of DOM manipulations is crucial.
 Use Cases: Compile-time reactivity is well-suited for applications where bundle size and direct DOM update performance are critical. Run-time reactivity is advantageous in applications that benefit from React's ecosystem, developer tools, and the flexibility of the virtual DOM.
 Learning Curve and Complexity: Svelte's compile-time approach may have a simpler mental model for reactivity, as it more closely resembles vanilla JavaScript with some reactivity extensions. React's run-time model, while potentially more complex due to the virtual DOM and lifecycle methods, benefits from extensive documentation, community support, and familiarity among web developers.
 
-#### Compile-time Reactivity
+### Compile-time Reactivity
 Definition: Compile-time reactivity refers to a framework or compiler's ability to analyze and prepare reactive dependencies and updates during the build process, before the application is loaded in the browser.
 How It Works in Svelte:
 * In Svelte, the compiler looks at the component code and identifies reactive statements and variables. It then generates the minimal JavaScript code necessary to update the DOM when state changes occur.
@@ -551,7 +551,7 @@ Advantages:
 * Performance: Direct DOM updates avoid the overhead of diffing and patching a virtual DOM, resulting in faster render times and smoother animations.
 * Efficiency: Lower memory footprint, as there's no need to maintain a virtual DOM or reactivity system at runtime.
 
-#### Run-time Reactivity
+### Run-time Reactivity
 Definition: Run-time reactivity involves managing state changes and UI updates during the application's execution in the browser. The framework uses a virtual DOM or other abstractions to track changes and update the UI reactively.
 How It Works in React:
 * React maintains a virtual representation of the UI (the virtual DOM). When state changes, React creates a new virtual DOM tree, compares it with the previous one (diffing), and calculates the minimal set of changes needed to update the actual DOM (patching).
