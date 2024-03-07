@@ -1,6 +1,6 @@
 
 # React.js Comprehensive Guide
-This guide provides a detailed overview of key concepts, patterns, and techniques in React.js, serving as a handy reference for developers.
+This guide provides a detailed overview of key concepts, patterns, and techniques in React.js, serving as a handy reference for developers...
 
 ## Table of contents
 - [React.js Comprehensive Guide](#reactjs-comprehensive-guide)
